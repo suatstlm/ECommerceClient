@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertifyService, MessageType } from '../../@core/services/alertify.service';
 
 @Component({
   selector: 'ngx-product',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alertify: AlertifyService) { }
 
   ngOnInit(): void {
+    this.alertify.message("Products open", {
+      messageType: MessageType.Success
+    })
   }
 
 }
