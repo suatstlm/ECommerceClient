@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertifyService, MessageType } from '../../@core/services/alertify.service';
+import { AlertifyService, MessageType } from '../../@core/services/notification/alertify.service';
 
 @Component({
   selector: 'ngx-product',
