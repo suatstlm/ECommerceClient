@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertifyService, MessageType } from '../../@core/services/notification/alertify.service';
+import { NbGlobalLogicalPosition } from '@nebular/theme';
+import { ToastrService, ToastrMessageType} from '../../@core/services/notification/toastr.service';
 
 @Component({
   selector: 'ngx-product',
@@ -8,11 +9,12 @@ import { AlertifyService, MessageType } from '../../@core/services/notification/
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private alertify: AlertifyService) { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.alertify.message("Products open", {
-      messageType: MessageType.Success
+    this.toastr.message("Products list","Products",{
+      messageType: ToastrMessageType.Show,
+      position: NbGlobalLogicalPosition.BOTTOM_END
     })
   }
 

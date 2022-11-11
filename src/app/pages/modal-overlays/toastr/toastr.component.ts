@@ -22,7 +22,7 @@ export class ToastrComponent {
   destroyByClick = true;
   duration = 2000;
   hasIcon = true;
-  position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
+  position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_LEFT;
   preventDuplicates = false;
   status: NbComponentStatus = 'primary';
 

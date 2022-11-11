@@ -1,40 +1,35 @@
-import { Injectable } from '@angular/core';
-import { appendFile } from 'fs';
-import { ToastrService } from 'ngx-toastr';
+import { Injectable } from "@angular/core";
+import { NbGlobalPosition, NbToastrService } from "@nebular/theme";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
-export class CustomToastrService {
-  constructor(private toastr: ToastrService) { }
-  message(message: string, title: string, toastrOptions: Partial<ToastrOptions>) {
+export class ToastrService {
+  constructor(private toastr: NbToastrService) {}
+
+  message(
+    message: string,
+    title: string,
+    toastrOptions: Partial<ToastrOptions>
+  ) {
     this.toastr[toastrOptions.messageType](message, title, {
-      positionClass: toastrOptions.position
+      position: toastrOptions.position
     });
   }
 }
 
 export class ToastrOptions {
   messageType: ToastrMessageType;
-  position: ToastrPosition
+  position: NbGlobalPosition;
 }
 
 export enum ToastrMessageType {
+  Show = "show",
+  Primary = "primary",
   Success = "success",
   Info = "info",
   Warning = "warning",
-  Error = "error"
-}
-
-export enum ToastrPosition {
-  TopRight = "toast-top-right",
-  BottomRight = "toast-bottom-right",
-  BottomLeft = "toast-bottom-left",
-  TopLeft = "toast-top-left",
-  TopFullWidth = "toast-top-full-width",
-  BottomFullWidth = "toast-bottom-full-width",
-  TopCenter = "toast-top-center",
-  BottomCenter = "toast-bottom-center"
+  Danger = "danger",
 }
 
 // you heve to add to app.module.ts ToastrModule.forRoot()

@@ -20,8 +20,6 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import { ToastrModule } from 'ngx-toastr';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,9 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
-    ThemeModule.forRoot(),
-    ToastrModule.forRoot(),
-    FontAwesomeModule,
+    ThemeModule.forRoot()
   ],
   bootstrap: [AppComponent],
 })
